@@ -8,13 +8,23 @@ const Footer = () => {
           <li className="list-inline-item">v1.0.0</li>
           <li className="list-inline-item"> - </li>
           <li className="list-inline-item">
-            <a href="https://github.com/awran5/shorten/" target="_blank" title="GitHub" rel="noopener noreferrer">
+            <a
+              href="https://github.com/awran5/better-to-do-app/"
+              target="_blank"
+              title="GitHub"
+              rel="noopener noreferrer"
+            >
               GitHub
             </a>
           </li>
           <li className="list-inline-item"> - </li>
           <li className="list-inline-item">
-            <a href="https://github.com/awran5/shorten/issues" target="_blank" title="Issues" rel="noopener noreferrer">
+            <a
+              href="https://github.com/awran5/better-to-do-app/issues"
+              target="_blank"
+              title="Issues"
+              rel="noopener noreferrer"
+            >
               Issues
             </a>
           </li>
