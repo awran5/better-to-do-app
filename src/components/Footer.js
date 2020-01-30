@@ -5,7 +5,7 @@ const Footer = () => {
     <div className="small text-light mb-2 footer ">
       <div className="text-center footer-info">
         <ul className="list-inline">
-          <li className="list-inline-item">v1.0.0</li>
+          <li className="list-inline-item">v1.1.0</li>
           <li className="list-inline-item"> - </li>
           <li className="list-inline-item">
             <a

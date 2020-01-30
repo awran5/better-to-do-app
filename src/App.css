@@ -28,7 +28,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
-  background: linear-gradient(125deg, rgb(182, 40, 111) 50%, #ac2066 0);
+  background: linear-gradient(125deg, #b6286f 50%, #ac2066 0);
 }
 
 button {
@@ -90,8 +90,8 @@ a:hover {
 }
 
 .main {
-  padding: 2rem;
-  width: 25vw;
+  padding: 1rem;
+  width: 30vw;
   min-width: 400px;
   max-height: 600px;
   overflow: hidden;
@@ -108,18 +108,24 @@ a:hover {
   color: #ccc;
   border-radius: .25rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  transition: background-color .3s ease;
   height: 35px;
+  transition: background-color .3s ease-in-out;
 }
+
 .btn:hover {
   background-color: #581335;
 }
 
-.header {
+.btn:active {
+  position: relative;
+  top: 1px;
+}
+
+.title {
   margin: 2rem 0;
 }
 
-.header h1 {
+.title h1 {
   color: #ccc;
   font-weight: 300;
   text-align: center;
@@ -143,6 +149,11 @@ a:hover {
   outline: none;
   border-radius: 20px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  transition: border-color .2s ease;
+}
+
+.task-input:focus {
+  border-color: #741545;
 }
 
 .buttons {
@@ -189,17 +200,19 @@ a:hover {
 }
 
 .icon {
-  display: inline-block;
-  width: 1rem;
+  width: 1.25rem;
   height: 1rem;
-  stroke-width: 0;
-  margin: 0 .5rem;
+  margin: 0 .25rem;
   opacity: .5;
   transition: opacity .2s;
 }
 
 .icon:hover {
   opacity: 1;
+}
+
+.complete {
+  fill: #12c712;
 }
 
 .footer {

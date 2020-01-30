@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react'
-import uuid from 'uuid'
+import uuidv1 from 'uuid/v1'
 
 export const TaskListContext = createContext()
 
@@ -17,28 +17,29 @@ const TaskListContextProvider = props => {
   )
 
   // Add tasks
-  const addTask = title => setTasks([ ...tasks, { title, id: uuid() } ])
+  const addTask = title => setTasks([ ...tasks, { title, id: uuidv1(), complete: false } ])
 
   // Remove tasks
   const removeTask = id => setTasks(tasks.filter(task => task.id !== id))
 
-  // Clear tasks
-  const clearList = () => setTasks([])
-
   // Find task
-  const findItem = id => {
-    const item = tasks.find(task => task.id === id)
-
-    setEditItem(item)
-  }
+  const findItem = id => setEditItem(tasks.find(task => task.id === id))
 
   // Edit task
   const editTask = (title, id) => {
-    const newTasks = tasks.map(task => (task.id === id ? { title, id } : task))
+    const edited = tasks.map(task => (task.id === id ? { ...task, title } : task))
+    setTasks(edited)
 
-    setTasks(newTasks)
     setEditItem(null)
   }
+
+  const completeTask = (complete, id) => {
+    const completed = tasks.map(task => (task.id === id ? { ...task, complete } : task))
+    setTasks(completed)
+  }
+
+  // Clear all tasks
+  const clearList = () => setTasks([])
 
   return (
     <TaskListContext.Provider
@@ -46,10 +47,11 @@ const TaskListContextProvider = props => {
         tasks,
         addTask,
         removeTask,
-        clearList,
         findItem,
+        editItem,
         editTask,
-        editItem
+        completeTask,
+        clearList
       }}
     >
       {props.children}
